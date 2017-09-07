@@ -31,6 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Linker>
+			<Add option="-lmingw32 -lSDLmain -lSDL -lopengl32" />
+		</Linker>
+		<Unit filename="Initialize.cpp" />
+		<Unit filename="Initialize.h" />
+		<Unit filename="Main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
