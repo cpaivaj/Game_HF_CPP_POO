@@ -1,8 +1,10 @@
 #ifndef INITIALIZE_H_INCLUDED
 #define INITIALIZE_H_INCLUDED
 
-// este eh o cabecalho, contem atributos e metodos
-// atributos privados, metodos publicos
+// this is the header, contains attributes and methods
+// private attributes, public methods
+#define WIDTH 600
+#define HEIGHT 400
 
 class Initialize
 {
