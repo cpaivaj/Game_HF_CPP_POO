@@ -4,6 +4,7 @@
 
 #include <SDL.h>
 #include "SDL_opengl.h"
+#include "SDL_image.h" // x86
 
 using namespace std;
 
@@ -47,3 +48,39 @@ void Initialize::InitSDL()
 
     cout << "SDL Initialized!" << endl;
 }
+
+GLuint Initialize::LoadTexture(const std::string&fileName)
+{
+    SDL_Surface *image = IMG_Load(fileName.c_str()); // image load
+
+    SDL_DisplayFormatAlpha(image); // display format
+
+	// create texture
+	unsigned object(0);
+
+	glGenTextures(1, &object); // texture generator
+
+	glBindTexture(GL_TEXTURE_2D, object);
+
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->w, image->h, 0, GL_RGBA, GL_UNSIGNED_BYTE, image->pixels);
+
+	// free image
+	SDL_FreeSurface(image);
+
+	return object;
+}
+
+
+
+
+
+
+
+
+
