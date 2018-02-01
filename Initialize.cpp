@@ -3,12 +3,11 @@
 #include <iostream>
 
 #include <SDL.h>
-#include "SDL_opengl.h"
 #include "SDL_image.h" // x86
 
 using namespace std;
 
-void Initialize::InitSDL()
+void Initialize::SDLInit()
 {
     SDL_Init(SDL_INIT_EVERYTHING);
 
@@ -76,6 +75,10 @@ GLuint Initialize::LoadTexture(const std::string&fileName)
 	return object;
 }
 
+void Initialize::SDLQuit()
+{
+    SDL_Quit();
+}
 
 
 

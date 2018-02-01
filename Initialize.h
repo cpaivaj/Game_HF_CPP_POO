@@ -12,8 +12,9 @@
 class Initialize
 {
     public:
-        void InitSDL();
+        void SDLInit();
         GLuint LoadTexture(const std::string&fileName);
+        void SDLQuit();
 };
 
 #endif // INITIALIZE_H_INCLUDED

@@ -5,9 +5,21 @@ using namespace std;
 
 int main()
 {
-    // Instancia a classe
+    bool isRunning = true;
+
+    // Class
     Initialize init;
-    init.InitSDL();
+
+    // Call functions
+    init.SDLInit();
+
+    // Principal loop
+    while(isRunning)
+    {
+
+    }
+
+    init.SDLQuit();
 
     return 0;
 }
